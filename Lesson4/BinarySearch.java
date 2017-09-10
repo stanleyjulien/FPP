@@ -11,6 +11,7 @@ public class BinarySearch
 		{
 			return -1;
 		}
+		
 		if(key==intArr[mid])
 		{
 			return 1;
