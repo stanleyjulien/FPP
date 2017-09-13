@@ -63,20 +63,27 @@ public class Computer
 		else
 		{
 			Computer c = (Computer) ob;
-			if(manufacturer.equals(c.manufacturer))
+			if(manufacturer.equals(c.manufacturer) && processor.equals(c.processor) && ramSize == c.ramSize 
+					&& diskSize == c.diskSize && processorSpeed == c.processorSpeed)
 			{
 				return true;
 			}
-			else if(processor.equals(c.processor))
+			/*else if(processor.equals(c.processor))
 			{
 				return true;
-			}
+			}*/
 			else
 			{
 				return false;
 			}
 			 
 		}
+	}
+	
+	@Override 
+	public int hashCode()
+	{
+		return 0;
 	}
 	
 	
