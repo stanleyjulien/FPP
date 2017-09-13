@@ -32,21 +32,18 @@ public class Main
 			double sumPro = 0.0, sumSec = 0.0, sum = 0.0;
 			for(DeptEmployee dep : department)
 			{
-				if(dep instanceof Professor)
-				{
-					sumPro = sumPro + dep.computeSalary();
-				}
-				if(dep instanceof Secretary)
-				{
-					sumSec = sumSec + dep.computeSalary();
-				}
+				
 				sum = sum + dep.computeSalary();
 				
 			}
-			System.out.println("Sum of all Professor salaries: "+sumPro);
+			/*System.out.println("Sum of all Professor salaries: "+sumPro);
 			System.out.println("Sum of all Secretaire salaries: "+sumSec);
+			*/
 			System.out.println("Sum of all salaries: "+sum);
 		}
 		scan.close();
 	}
 }
+/*Do you want to see the sum of all Professor, Secretary and Department salaries? (Y/N): Y
+Sum of all salaries: 1005900.0
+*/
