@@ -1,6 +1,6 @@
 package lesson5;
 
-public class Computer 
+public class Computer implements Cloneable
 {
 	private String manufacturer;
 	private String processor;
@@ -18,6 +18,11 @@ public class Computer
 		this.processorSpeed	= processorSpeed;
 	}
 	
+	// Setter
+	public void setProcessor(String processor)
+	{
+		this.processor = processor;
+	}
 	// Getter
 	public String getManufacturer()
 	{
@@ -97,11 +102,11 @@ public class Computer
 		
 		return result;
 	}
-	/*
-	 78828790
--78828790
--78828790
--1653984807
-	 */
+	
+	public Object clone() throws CloneNotSupportedException {
+
+	    Computer cloneComputer=(Computer)super.clone();
+		return cloneComputer;
+ }
 	
 }
