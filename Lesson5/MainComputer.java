@@ -12,6 +12,12 @@ public class MainComputer
 		
 		System.out.println(c.equals(c2));
 		System.out.println(c.equals(c3));
+		
+		System.out.println(c.hashCode());
+		System.out.println(c3.hashCode());
+		
+		System.out.println(c.hashCode());
+		System.out.println(c2.hashCode());
 	}
 }
 
@@ -19,5 +25,9 @@ public class MainComputer
 Manufacturer: HP, Processor: Intel, Ram size: 8 GB, Disk size: 3 T, Processor speed: 2.5 GHz
 false
 true
+-1152832755
+-1152832755
+-1152832755
+-1009110566
 */
  

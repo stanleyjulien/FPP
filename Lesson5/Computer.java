@@ -83,8 +83,25 @@ public class Computer
 	@Override 
 	public int hashCode()
 	{
-		return 0;
+		int a = 13;
+		int result = 31 * a + manufacturer.hashCode();
+		result = 31 * result + processor.hashCode();
+		
+		result = 31 * result + Integer.valueOf(ramSize);
+		result = 31 * result + Integer.valueOf(diskSize);
+		
+		long temp = Double.doubleToLongBits(processorSpeed);
+		
+		result = (int) (31 * result + Double.valueOf(processorSpeed));
+				//(int) (temp ^ (temp >>> 32));;
+		
+		return result;
 	}
-	
+	/*
+	 78828790
+-78828790
+-78828790
+-1653984807
+	 */
 	
 }
