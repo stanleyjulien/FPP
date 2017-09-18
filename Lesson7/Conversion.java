@@ -90,10 +90,10 @@ public class Conversion
 		JButton jbtnRemoveLetter = new JButton("Convert");
 		jbtnRemoveLetter.setBounds(300,250,80,25);
 		frame.add(jbtnRemoveLetter);
-		jbtnRemoveLetter.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e)
-			{
+		jbtnRemoveLetter.addActionListener(evt -> { // Event using Lambda
+			//@Override
+			//public void actionPerformed(ActionEvent e)
+			//{
 				if(jtxtfMile.getText() != null || jtxtfMile.getText().equals(""))
 				{
 					double r = 0;
@@ -125,7 +125,7 @@ public class Conversion
 					
 				}
 				
-			}
+			//}
 		});
 	}
 	
