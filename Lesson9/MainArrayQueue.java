@@ -16,6 +16,9 @@ public class MainArrayQueue
 		q.print();
 		q.dequeue();
 		q.print();
+		System.out.println(q.peek());
+		q.print();
+		
 		//System.out.println(q.peek());
 	}
 }

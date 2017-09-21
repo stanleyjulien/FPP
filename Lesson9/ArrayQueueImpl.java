@@ -10,8 +10,9 @@ public class ArrayQueueImpl
 	public int peek() 
 	{
 		//implement
-		if(size == 0)
+		if(isEmpty())
 		{
+			System.out.println("Queue is Empty");
 			return -1;
 		}
 		return arr[front];
@@ -23,14 +24,14 @@ public class ArrayQueueImpl
 		if(arr.length == size)
 		{
 			// resizing
+			resize();
 		}
 		if(isEmpty()) // My first adding element
 		{
-			//arr[++front] = obj;
 			++front;
 		}
 		arr[rear] = obj;
-		++rear;
+		rear++;
 		size++;
 	}
 	public int dequeue() 
@@ -41,15 +42,11 @@ public class ArrayQueueImpl
 			System.out.println("Queue is Empty");
 			return -1;
 		}
-		
-		//int[] temp = new int[arr.length]; 
 
 		int val = arr[front];
 		
-		//System.arraycopy(arr, front+1, temp, 0, temp.length-1);
-		//arr = temp;
-		++front;
-		--size;
+		front++;
+		size--;
 		return val;
 		
 	}
@@ -67,6 +64,10 @@ public class ArrayQueueImpl
 	private void resize()
 	{
 		//implement
+		int l2 = 2 * arr.length;
+		int[] temp = new int[l2];
+		System.arraycopy(arr, 0, temp, 0, l2);
+		arr = temp;
 	}
 	
 	public void print()
