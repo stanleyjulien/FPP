@@ -58,6 +58,7 @@ public class MyStringLinkedList {
 			header.next.previous = header;
 			header = header.next;
 		}
+		size--;
 	}
 	
 	public void removeLast()
@@ -79,6 +80,7 @@ public class MyStringLinkedList {
 			//System.out.println(n.value);
 			n.previous = null;
 		}
+		size--;
 	}
 	
 	public void printMin()
@@ -217,7 +219,7 @@ public class MyStringLinkedList {
 			n.previous.next = newNode;
 			n.previous = newNode;
 		}	
-					
+		size++;		
 	}
 	
 	public Node findLast() {
@@ -370,7 +372,7 @@ public class MyStringLinkedList {
 		mySL.printReverse();
 		mySL.postAddNode(mySL.findItem("Orange Juice"), "Peach Sauce" );
 		System.out.println("Post add Node 3"+mySL);
-		//mySL.printReverse();
+		mySL.printReverse();
 		System.out.println(mySL.getFirst());
 		System.out.println(mySL.getLast());
 		mySL.removeFirst();
@@ -388,3 +390,51 @@ public class MyStringLinkedList {
 	}
 
 }
+/*Result
+-->[NULL]
+==>[NULL]
+-->[Carrot Cake]-->[NULL]
+==>[Carrot Cake]==>[NULL]
+-->[Blueberry Muffin]-->[Carrot Cake]-->[NULL]
+==>[Carrot Cake]==>[Blueberry Muffin]==>[NULL]
+-->[Apple Pie]-->[Blueberry Muffin]-->[Carrot Cake]-->[NULL]
+==>[Carrot Cake]==>[Blueberry Muffin]==>[Apple Pie]==>[NULL]
+-->[Apple Pie]-->[Blueberry Muffin]-->[Carrot Cake]-->[Orange Juice]-->[NULL]
+==>[Orange Juice]==>[Carrot Cake]==>[Blueberry Muffin]==>[Apple Pie]==>[NULL]
+-->[Apple Pie]-->[Blueberry Muffin]-->[Carrot Cake]-->[Orange Juice]-->[Peach Sauce]-->[NULL]
+==>[Peach Sauce]==>[Orange Juice]==>[Carrot Cake]==>[Blueberry Muffin]==>[Apple Pie]==>[NULL]
+I am here 2
+-->[Blueberry Muffin]-->[Carrot Cake]-->[Orange Juice]-->[Peach Sauce]-->[NULL]
+==>[Peach Sauce]==>[Orange Juice]==>[Carrot Cake]==>[Blueberry Muffin]==>[NULL]
+I am here 3
+-->[Blueberry Muffin]-->[Carrot Cake]-->[Orange Juice]-->[NULL]
+==>[Orange Juice]==>[Carrot Cake]==>[Blueberry Muffin]==>[NULL]
+I am here 4
+-->[Blueberry Muffin]-->[Orange Juice]-->[NULL]
+==>[Orange Juice]==>[Blueberry Muffin]==>[NULL]
+Post add Node 1-->[Blueberry Muffin]-->[Carrot Cake]-->[Orange Juice]-->[NULL]
+==>[Orange Juice]==>[Carrot Cake]==>[Blueberry Muffin]==>[NULL]
+-->[Apple Pie]-->[Blueberry Muffin]-->[Carrot Cake]-->[Orange Juice]-->[NULL]
+==>[Orange Juice]==>[Carrot Cake]==>[Blueberry Muffin]==>[Apple Pie]==>[NULL]
+Post add Node 2-->[Apple Pie]-->[Blueberry Muffin]-->[Carrot Cake]-->[Danish Delight]-->[Orange Juice]-->[NULL]
+==>[Orange Juice]==>[Danish Delight]==>[Carrot Cake]==>[Blueberry Muffin]==>[Apple Pie]==>[NULL]
+-->[Apple Pie]-->[Blueberry Muffin]-->[Carrot Cake]-->[Danish Delight]-->[Mango Smoothie]-->[Orange Juice]-->[NULL]
+==>[Orange Juice]==>[Mango Smoothie]==>[Danish Delight]==>[Carrot Cake]==>[Blueberry Muffin]==>[Apple Pie]==>[NULL]
+Post add Node 3-->[Apple Pie]-->[Blueberry Muffin]-->[Carrot Cake]-->[Danish Delight]-->[Mango Smoothie]-->[Orange Juice]-->[Peach Sauce]-->[NULL]
+==>[Peach Sauce]==>[Orange Juice]==>[Mango Smoothie]==>[Danish Delight]==>[Carrot Cake]==>[Blueberry Muffin]==>[Apple Pie]==>[NULL]
+Apple Pie
+Peach Sauce
+-->[Blueberry Muffin]-->[Carrot Cake]-->[Danish Delight]-->[Mango Smoothie]-->[Orange Juice]-->[Peach Sauce]-->[NULL]
+Remove last -->[Blueberry Muffin]-->[Carrot Cake]-->[Danish Delight]-->[Mango Smoothie]-->[Orange Juice]-->[NULL]
+Blueberry Muffin
+Orange Juice
+Printing recursively
+Blueberry Muffin
+Carrot Cake
+Danish Delight
+Mango Smoothie
+Orange Juice
+-->[NULL]
+==>[NULL]
+
+*/
